@@ -1,0 +1,79 @@
+
+section#banner img {
+    width: 100%;
+}
+
+section#home {
+    text-align: center;
+    gap: 2px;
+}
+
+section#home img {
+    margin: 27px;
+}
+
+section#sales {
+    background: #c2185b;
+    padding: 61px;
+}
+
+section#sales h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+section#sales .card {
+    background-color: #ffffff;
+}
+
+section#sales .card p {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+}
+
+section#sales .card span {
+    font-size: 16px;
+}
+
+section#sales .card .content {
+    padding: 11px 11px 25px 11px;
+}
+
+section#detailed {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 160px 0;
+}
+
+section#detailed button {
+    width: 403px;
+    height: 99px;
+    background: #c2185b;
+
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 39px;
+
+    border: none;
+    margin-bottom: 50px;
+}
+
+section#detailed > div {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}

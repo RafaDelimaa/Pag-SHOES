@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/formulario.css">
+
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+
+
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="email@me.com" required>
+        <br>
+        <label for="Telefone">Telefone</label>
+        <input type="Tel" name="Telefone" id="Telefone" placeholder="(DDD) 9-9999-9999" required>
+        <br>
+        <label for="Departamentos">Departamentos</label>
+        <input type="text" name="Departamentos" id="Departamentos" required>
+        <br>
+        <!-- a opção checked server para quando recaregar a pagina já esteja selecionada-->
+        <label for="">Disponibilidade</label>
+        <br>
+        <input type="checkbox" name="Integral" valeu="Integral" id="Integral" checked ><label for="Integral">Integral (8h)</label>
+        <input type="checkbox" name="Meio periodo" value="Meio periodo" id="Meio periodo"><label for="Meio periodo">Meio periodo (4h)</label>
+        <input type="checkbox" name="Freelance" value="Freelance" id="Freelance"><label for="Freelance">Freelance</label>
+        <br>
+        <label for="">Qual a melhor forma de entrarmos em contato com você?</label>
+        <br>
+        <input type="radio" id="Email" name="Email" value="Email"><label for="Email">Email</label>
+        <!--tag name="" (para selecionar apenas uma opção)
+        tag for=""(para o usuarios conseguir clicar na opção clicando em cima do nome também)-->
+        <br>
+        <input type="radio" id="Ligação" name="Ligação" value="Ligação"><label for="Ligação">Ligação</label>
+        <br>
+        <input type="radio" id="WhatsApp" name="WhatsApp" value="WhatsApp"><label for="WhatsApp">WhatsApp</label>
+
+        <br>
+        <label for="mensagem">Mensagem</label>
+        <br>
+        <textarea name="mensagem" id="mensagem" cols="30" rows="10">Digite sua mensagem</textarea>
+        <br>
+        <!--<input type="subimit" value="Enviar">-->
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar campos</button>
+        <button type="button">Teste</button>
+    </form>
+</body>
+</html>
