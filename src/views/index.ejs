@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <title>Shoes Store</title>
+</head>
+
+<body>
+  <%- include('./partials/header') %>
+
+  <main>
+    <section id="banner">
+      <img src="/img/banner.png" alt="Banner Principal">
+    </section>
+
+    <section id="home">
+      <h1> <%= tituloPrincipal %> </h1>
+
+      <div>
+        <img src="/img/photoshoot-1.png" alt="Foto de uma mulher com bota preta">
+        <img src="/img/photoshoot-2.png" alt="Foto de uma mulher com bota branca ">
+      </div>
+    </section>
+
+    <section id="sales">
+      <h2><%= tituloSecundario %></h2>
+
+      <div class="container">
+        <% sapatos.forEach((sapato) => { %>
+        <div class="card">
+          <img src="/img/<%= sapato.imagem %>" alt="Salto Branco">
+          <div class="content">
+            <p><%= sapato.descricao %></p>
+            <span>R$<%= sapato.valor %>,00</span>
+          </div>
+        </div>
+        <% }) %>
+    </section>
+
+    <section id="detailed">
+      <div>
+        <h3>
+          SANDÁLIA PALMILHA
+          <br>
+          MATELASSÊ TIRAS ROLOTÊ
+        </h3>
+
+        <button type="button">ver detalhes</button>
+
+        <img src="/img/photoshoot-3.png" alt="Salto preto">
+      </div>
+      <img src="/img/photoshoot-4.png" alt="Salto preto">
+    </section>
+  </main>
+
+  <%- include('./partials/footer') %>
+
+</body>
+
+</html>
