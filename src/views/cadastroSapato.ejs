@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/formulario.css">
+  <title>Shoes Store</title>
+</head>
+
+<body>
+  <%- include('./partials/header') %>
+
+  <main>
+    <section id="faixa-aviso">
+      <p>MÊS DE SETEMBRO - FRETE GRÁTIS PARA TODO O BRASIL</p>
+    </section>
+
+    <section>
+      <form action="/sapatos" method="post">
+        <h1>Cadastre um sapato</h1>
+
+        <div class="input-group">
+          <!-- O label com "for" referencia o nosso input -->
+          <label for="nome">Descricao</label>
+          <input type="text" id="descricao" name="descricao">
+        </div>
+
+        <div class="input-group">
+
+          <label for="email">valor</label>
+          <!-- O type email força com que o usuário digite um email e não um texto qualquer -->
+          <input type="number" id="valor" name="valor">
+        </div>
+
+        <div class="input-group">
+          <label for="telefone">Imagem</label>
+          <!-- O campo required força o usuário a preencher este campo, quando for inserido o submit -->
+          <input type="text" id="imagem" name="imagem" required>
+        </div>
+
+        <!-- Quando o botão é do tipo submit, ele irá enviar o formulário com o method e action informado no form -->
+        <button type="submit">enviar</button>
+      </form>
+
+      <aside>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+          et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea
+          commodo
+          consequat.
+        </p>
+
+        <br>
+
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+          anim
+          id est
+          laborum.
+        </p>
+
+        <br>
+
+        <p>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <%- include('./partials/footer') %>
+</body>
+
+</html>
