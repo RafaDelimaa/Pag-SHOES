@@ -7,29 +7,34 @@ const sapatosController = {
       title: 'Express',
     });
   },
+  create: (request, response) => {
+    const nomeArquivosSapatos = 'sapatos.json';
 
-    create: (request, response) => {
-      const nomeArquivosSapatos = 'sapatos.json';
+    // busquei o arquivo sapatos.json
+    const sapatosArquivo = fs.readFileSync(nomeArquivosSapatos);
 
-      const sapatosArquivo = fs.readFileSync(nomeArquivosSapatos);
-      const sapatosJSON = JSON.parse(sapatosArquivo);
+    // transformei string em JSON
+    const sapatosJSON = JSON.parse(sapatosArquivo);
 
-      const novoSapatos = {
-        id: uuid(),
-        ...request.body //{nome: teste} -> {nome:teste}
-      }
+    // criei um novo objeto com todo cadastro + um novo UUID (identificador)
+    const novoSapato = {
+      id: uuid(),
+      ...request.body //{nome: teste} -> {nome:teste} 
+    }
 
-      sapatosJSON.push(novoSapatos);
+    // inserindo meu novo sapato no array de sapatos
+    sapatosJSON.push(novoSapato);
 
-      fs.writeFileSync(nomeArquivosSapatos, JSON.stringify(sapatosJSON))
-      response.render('cadastroSapato', {
-        title: 'Express',
-      });
-    },
-  }
+    // grava todos os sapatos no arquivo
+    fs.writeFileSync(nomeArquivosSapatos, JSON.stringify(sapatosJSON))
 
-    // usuario chama uma url com metodo
-    // express ouve essa url(router)
-    // expresss direciona para controller
+    //redireciono para tela inical
+    response.redirect('/');
+  },
+}
 
-    module.exports = sapatosController
+// usuario chama uma url com metodo
+// express ouve essa url(router)
+// expresss direciona para controller
+
+module.exports = sapatosController

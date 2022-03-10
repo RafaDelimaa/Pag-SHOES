@@ -10,7 +10,7 @@ const usuariosController = {
 
     const novoUsuario = {
       id: uuid(),
-      ...request.body //{nome: teste} -> {nome:teste}
+      ...request.body //{nome: teste} -> {nome:teste} 
     }
 
     usuariosJSON.push(novoUsuario);
