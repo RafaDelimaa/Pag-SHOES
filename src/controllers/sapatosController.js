@@ -19,7 +19,8 @@ const sapatosController = {
     // criei um novo objeto com todo cadastro + um novo UUID (identificador)
     const novoSapato = {
       id: uuid(),
-      ...request.body //{nome: teste} -> {nome:teste}
+      ...request.body,
+      fileName: request.file.fileName //{nome: teste} -> {nome:teste}
     }
 
     // inserindo meu novo sapato no array de sapatos

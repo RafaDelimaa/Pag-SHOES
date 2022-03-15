@@ -34,7 +34,7 @@
       <div class="container">
         <% sapatos.forEach((sapato) => { %>
         <div class="card">
-          <img src="/img/<%= sapato.imagem %>" alt="Salto Branco">
+          <img src="/uploads/<%= sapato.fileName %>" alt="Salto Branco">
           <div class="content">
             <p><%= sapato.descricao %></p>
             <span>R$<%= sapato.valor %>,00</span>
