@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { uuid } = require('uuidv4');
+const { v4: uuid } = require('uuid');
 
 const sapatosController = {
   buscarPaginaCadastro: (request, response) => {
@@ -19,7 +19,7 @@ const sapatosController = {
     // criei um novo objeto com todo cadastro + um novo UUID (identificador)
     const novoSapato = {
       id: uuid(),
-      ...request.body //{nome: teste} -> {nome:teste} 
+      ...request.body //{nome: teste} -> {nome:teste}
     }
 
     // inserindo meu novo sapato no array de sapatos

@@ -1,5 +1,6 @@
 const fs = require('fs');
-const { uuid } = require('uuidv4');
+const { v4: uuid } = require('uuid');
+
 
 const usuariosController = {
   create: (request, response) => {
@@ -10,7 +11,7 @@ const usuariosController = {
 
     const novoUsuario = {
       id: uuid(),
-      ...request.body //{nome: teste} -> {nome:teste} 
+      ...request.body //{nome: teste} -> {nome:teste}
     }
 
     usuariosJSON.push(novoUsuario);
