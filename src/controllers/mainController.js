@@ -1,14 +1,15 @@
-const fs = require('fs');
+const { Sapato } = require('../../database/models')
 
 const mainController = {
-  index: (request, response) => {
-    const nomeArquivosSapatos = 'sapatos.json';
-
-    // buscou sapatos no arquivo sapatos.json
-    const sapatosArquivo = fs.readFileSync(nomeArquivosSapatos);
-
-    // transformou uma string em json '[]' -> []
-    const sapatos = JSON.parse(sapatosArquivo);
+  index: async (request, response) => {
+    let todosSapatos = await Sapato.findAll({raw: true});
+    let sapatos = todosSapatos.map((sapato) => {
+      return {
+        id: sapato.id,
+        descricao: sapato.descricao,
+        valor: sapato.valor,
+      }
+    })
 
     // pedi pra redenrizar com os sapatos que estavam no arquivo
     response.render('index', {

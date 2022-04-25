@@ -1,3 +1,5 @@
+const { Sapato } = require('../../database/models');
+
 const fs = require('fs');
 const { v4: uuid } = require('uuid');
 
@@ -7,31 +9,47 @@ const sapatosController = {
       title: 'Express',
     });
   },
-  create: (request, response) => {
-    const nomeArquivosSapatos = 'sapatos.json';
-
-    // busquei o arquivo sapatos.json
-    const sapatosArquivo = fs.readFileSync(nomeArquivosSapatos);
-
-    // transformei string em JSON
-    const sapatosJSON = JSON.parse(sapatosArquivo);
-
+  create: async (request, response) => {
     // criei um novo objeto com todo cadastro + um novo UUID (identificador)
     const novoSapato = {
       id: uuid(),
       ...request.body,
-      fileName: request.file.fileName //{nome: teste} -> {nome:teste}
+      filename: request.file.filename
     }
 
-    // inserindo meu novo sapato no array de sapatos
-    sapatosJSON.push(novoSapato);
-
-    // grava todos os sapatos no arquivo
-    fs.writeFileSync(nomeArquivosSapatos, JSON.stringify(sapatosJSON))
+    await Sapato.create(novoSapato);
 
     //redireciono para tela inical
     response.redirect('/');
   },
+
+  edit: async (request, response) => {
+    const { id } = request.params;
+
+    let sapato = await Sapato.findByPk(id);
+
+    response.render('editSapato', {
+      sapato
+    });
+  },
+
+  update: async (request, response) => {
+    const { id } = request.params;
+    const { descricao, valor, filename } = request.body;
+
+    await Sapato.update({
+      descricao,
+      valor,
+      filename,
+    },
+    {
+      where: {
+        id
+      }
+    })
+    
+    response.redirect('/');
+  }
 }
 
 // usuario chama uma url com metodo

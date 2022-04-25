@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', mainController.index);
 
 router.get('/trabalhe-conosco', function (req, res, next) {
-  res.render('formulario', { title: 'Express' });
+  res.render('formulario', { title: 'Trabalhe Conosco' });
 });
 
 module.exports = router;
